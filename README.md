@@ -1,46 +1,61 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19672529&assignment_repo_type=AssignmentRepo)
 # MongoDB Fundamentals Assignment
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+This repository contains MongoDB scripts to perform various database operations on a books collection. The scripts cover CRUD operations, aggregation pipelines, indexing, and query performance analysis.
 
-## Assignment Overview
+## Activities done
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+-MongoDB installed (version 4.2 or higher recommended)
+-MongoDB Shell (mongo) or MongoDB Compass for running queries
+-Access to MongoDB Atlas cluster (optional if using cloud database)
 
-## Getting Started
+How to Run
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+1. **Start MongoDB server if running locally:**
+mongod
 
-## Files Included
+2. **Open MongoDB Shell:**
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+   ```bash
+   mongo
+   ```
 
-## Requirements
+3. **Switch to your database:**
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+   ```js
+   use plp_bookstore
+   ```
 
-## Submission
+4. **Run your scripts:**
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+   You can run the queries manually inside the shell 
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
 
-## Resources
+5. **Example Queries:**
+
+    * Example MongoDB queries you can try after running this script:
+ *
+ * 1. Find all books:
+ *    db.books.find()
+ *
+ * 2. Find books by a specific author:
+ *    db.books.find({ author: "George Orwell" })
+ *
+ * 3. Find books published after 1950:
+ *    db.books.find({ published_year: { $gt: 1950 } })
+ *
+ * 4. Find books in a specific genre:
+ *    db.books.find({ genre: "Fiction" })
+ *
+ * 5. Find in-stock books:
+ *    db.books.find({ in_stock: true })
+
+   * Create index on `title`:
+
+     db.books.createIndex({title: 1});
+     ```
+
+
 
 - [MongoDB Documentation](https://docs.mongodb.com/)
 - [MongoDB University](https://university.mongodb.com/)
